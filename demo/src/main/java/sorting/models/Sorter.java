@@ -12,4 +12,11 @@ public class Sorter {
     public void sort(int[] arr) {
         sort.sort(arr);
     }
+    public String getName() {
+        return sort.getName();
+    }
+
+    public void setSort(Sort sort) {
+        this.sort = sort;
+    }
 }
