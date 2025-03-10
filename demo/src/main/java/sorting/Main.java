@@ -8,6 +8,7 @@ import sorting.models.Sorter;
 import sorting.models.Sorts.BubbleSort;
 import sorting.models.Sorts.InsertionSort;
 import sorting.models.Sorts.Sort;
+import sorting.models.Sorts.QuickSort;
 
 
 public class Main implements Runnable {
@@ -38,6 +39,7 @@ public class Main implements Runnable {
         System.out.println("Enter the sorting algorithm to be used");
         System.out.println("1. Bubble Sort");
         System.out.println("2. Insertion Sort");
+        System.out.println("3. Quick Sort");
         int choice = sc.nextInt();
         Sort sort = null;
         if (choice == 1) {
@@ -46,9 +48,17 @@ public class Main implements Runnable {
         } else if (choice == 2) {
             sort = new InsertionSort();
             sort.sort(arr);
+        } else if (choice == 3) {
+            sort = new QuickSort();
+            sort.sort(arr);
         }
-        
+        // else {
+        //     System.out.println("Invalid choice");
+        //     System.exit(0);
+        // }
+
         System.out.println(""+ Arrays.toString(arr));
+        // sc.close();
         Main main = new Main(sort);
         main.run();
     }
