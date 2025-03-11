@@ -7,9 +7,9 @@ import java.util.Arrays;
 import sorting.models.Sorter;
 import sorting.models.Sorts.BubbleSort;
 import sorting.models.Sorts.InsertionSort;
-import sorting.models.Sorts.RadixSort;
-import sorting.models.Sorts.Sort;
+import sorting.models.Sorts.MergeSort;
 import sorting.models.Sorts.QuickSort;
+import sorting.models.Sorts.RadixSort;
 
 public class Main {
     private static Sorter sorter;
@@ -27,10 +27,8 @@ public class Main {
         // a file
         // that contains an array of numbers.
         Sort_Array sort_array = null;
-        try {
-            String currentPath = System.getProperty("user.dir");
-        
-            sort_array = new Sort_Array("demo/src/main/java/sorting/data/array.txt");
+        try {        
+            sort_array = new Sort_Array("data/array.txt");
         } catch (IOException e) {
             System.out.println(e.getMessage());
             System.exit(1);
@@ -41,11 +39,11 @@ public class Main {
         System.out.println("1. Bubble Sort");
         System.out.println("2. Insertion Sort");
         System.out.println("3. Quick Sort");
+        System.out.println("4. Radix Sort");
+        System.out.println("5. Merge Sort");
         int choice = sc.nextInt();
         System.out.println(choice);
         sorter = new Sorter();
-        Sort sort = null;
-
         switch (choice) {
             case 1:
                 sorter.setSort(new BubbleSort());
@@ -55,6 +53,12 @@ public class Main {
                 break;
             case 3:
                 sorter.setSort(new QuickSort());
+                break;
+            case 4:
+                sorter.setSort(new RadixSort());
+                break;
+            case 5:
+                sorter.setSort(new MergeSort());
                 break;
             default:
                 System.out.println("Invalid choice");
