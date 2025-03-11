@@ -1,7 +1,6 @@
 package sorting;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+
 import java.io.IOException;
 import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;  // Import this class to handle errors
@@ -21,8 +20,11 @@ public class Sort_Array {
     	      Scanner myReader = new Scanner(myObj);
     	      while (myReader.hasNextLine()) {
     	        data = myReader.nextLine();
-    	        System.out.println(data);
+				System.out.print("The unsorted array is: [");
+    	        System.out.print(data);
+				System.out.println("]");
     	      }
+
     	      myReader.close();
     	      
     	      if (data != null) {

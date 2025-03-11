@@ -8,6 +8,8 @@ public class Sorter {
     public Sorter(Sort sort) {
         this.sort = sort;
     }
+    public Sorter() {
+    }
 
     public void sort(int[] arr) {
         sort.sort(arr);
