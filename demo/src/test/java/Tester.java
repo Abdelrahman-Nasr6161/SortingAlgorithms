@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import sorting.models.Sorter;
 import sorting.models.Sorts.BubbleSort;
 import sorting.models.Sorts.InsertionSort;
+import sorting.models.Sorts.QuickSort;
 
 public class Tester {
     @Test
@@ -116,6 +117,62 @@ public class Tester {
         long endTime = System.nanoTime();
         long elapsedTime = endTime - startTime;
         System.out.println("Insertion Sort 4 - Time taken: " + elapsedTime + " ns");
+        assertArrayEquals(arrExpected, arr);
+    }
+
+    @Test
+    void test_quickSort1()
+    {
+        int arr[] = {12,2,6,10,14,1,3,5,7,9};
+        Sorter sorter = new Sorter(new QuickSort());
+        int arrExpected[] = {1,2,3,5,6,7,9,10,12,14};
+        long startTime = System.nanoTime();
+        sorter.sort(arr);
+        long endTime = System.nanoTime();
+        long elapsedTime = endTime - startTime;
+        System.out.println("Quick Sort 1 - Time taken: " + elapsedTime + " ns");
+        assertArrayEquals(arrExpected, arr);
+    }
+
+    @Test
+    void test_quickSort2()
+    {
+        int arr[] = {5,4,3,1,6,1,4,2,5,7};
+        Sorter sorter = new Sorter(new QuickSort());
+        int arrExpected[] = {1,1,2,3,4,4,5,5,6,7};
+        long startTime = System.nanoTime();
+        sorter.sort(arr);
+        long endTime = System.nanoTime();
+        long elapsedTime = endTime - startTime;
+        System.out.println("Quick Sort 2 - Time taken: " + elapsedTime + " ns");
+        assertArrayEquals(arrExpected, arr);
+    }
+
+    @Test
+    void test_quickSort3()
+    {
+        int arr[] = {1,2,3,4,5,6,7,8,9,10};
+        Sorter sorter = new Sorter(new QuickSort());
+        int arrExpected[] = {1,2,3,4,5,6,7,8,9,10};
+        long startTime = System.nanoTime();
+        sorter.sort(arr);
+        long endTime = System.nanoTime();
+        long elapsedTime = endTime - startTime;
+        System.out.println("Quick Sort 3 - Time taken: " + elapsedTime + " ns");
+        assertArrayEquals(arrExpected, arr);
+    }
+
+    @Test
+    void test_quickSort4()
+    {
+        int arr[] = {-5,-10,3,-1,4,-2,0,6,-3,1};
+        Sorter sorter = new Sorter(new QuickSort());
+        int arrExpected[] = {-10,-5,-3,-2,-1,0,1,3,4,6};
+        long startTime = System.nanoTime();
+        sorter.sort(arr);
+        long endTime = System.nanoTime();
+        long elapsedTime = endTime - startTime;
+        System.out.println("Quick Sort 4 - Time taken: " + elapsedTime + " ns");
         assertArrayEquals(arrExpected, arr);
     }
 }
