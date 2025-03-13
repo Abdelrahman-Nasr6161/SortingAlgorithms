@@ -69,6 +69,7 @@ public class Main {
         }
         int startTime = (int) System.nanoTime();
         List<int[]> intermediates = sorter.sort(arr);
+        int endTime = (int) System.nanoTime();
         System.out.println("Do you want to see the intermediate arrays? ");
         System.out.println("1. Yes");
         System.out.println("2. No");
@@ -78,7 +79,6 @@ public class Main {
                 System.out.println(Arrays.toString(intermediate));
             }
         }
-        int endTime = (int) System.nanoTime();
         System.out.println("The sorted array is: ");
             System.out.println(Arrays.toString(arr));
             System.out.println("Time taken: " + (endTime - startTime) + " ns");

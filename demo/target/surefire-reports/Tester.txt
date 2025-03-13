@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: Tester
 -------------------------------------------------------------------------------
-Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.092 s -- in Tester
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.105 s -- in Tester
