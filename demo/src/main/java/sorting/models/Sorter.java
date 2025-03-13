@@ -1,5 +1,7 @@
 package sorting.models;
 
+import java.util.List;
+
 import sorting.models.Sorts.Sort;
 
 public class Sorter {
@@ -11,8 +13,8 @@ public class Sorter {
     public Sorter() {
     }
 
-    public void sort(int[] arr) {
-        sort.sort(arr);
+    public List<int[]> sort(int[] arr) {
+        return sort.sort(arr);
     }
     public String getName() {
         return sort.getName();

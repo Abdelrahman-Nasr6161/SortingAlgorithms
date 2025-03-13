@@ -1,6 +1,8 @@
 package sorting.models.Sorts;
 
+import java.util.ArrayList;
+
 public interface Sort {
-    public void sort(int[] arr);
+    public ArrayList<int[]> sort(int[] arr);
     public String getName();
 }

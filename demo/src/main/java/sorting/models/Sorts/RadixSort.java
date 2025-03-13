@@ -1,7 +1,10 @@
 package sorting.models.Sorts;
 
+import java.util.ArrayList;
 
 public class RadixSort implements Sort {
+
+    private ArrayList<int[]> intermediateArrays = new ArrayList<>();
 
     // Get the maximum absolute value for proper scaling
     private int getMax(int[] arr, int n) {
@@ -39,10 +42,13 @@ public class RadixSort implements Sort {
 
         // Copy sorted output back to original array
         System.arraycopy(output, 0, arr, 0, n);
+
+        // Store intermediate array state
+        intermediateArrays.add(arr.clone());
     }
 
     @Override
-    public void sort(int[] arr) {
+    public ArrayList<int[]> sort(int[] arr) {
         int n = arr.length;
         int max = getMax(arr, n);
 
@@ -50,6 +56,8 @@ public class RadixSort implements Sort {
         for (int exp = 1; max / exp > 0; exp *= 10) {
             countSort(arr, n, exp);
         }
+
+        return intermediateArrays;
     }
 
     @Override

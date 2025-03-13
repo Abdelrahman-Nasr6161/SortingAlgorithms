@@ -3,6 +3,7 @@ package sorting;
 import java.util.Scanner;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.List;
 
 import sorting.models.Sorter;
 import sorting.models.Sorts.BubbleSort;
@@ -67,7 +68,16 @@ public class Main {
             
         }
         int startTime = (int) System.nanoTime();
-        sorter.sort(arr);
+        List<int[]> intermediates = sorter.sort(arr);
+        System.out.println("Do you want to see the intermediate arrays? ");
+        System.out.println("1. Yes");
+        System.out.println("2. No");
+        int choice2 = sc.nextInt();
+        if (choice2 == 1) {
+            for (int[] intermediate : intermediates) {
+                System.out.println(Arrays.toString(intermediate));
+            }
+        }
         int endTime = (int) System.nanoTime();
         System.out.println("The sorted array is: ");
             System.out.println(Arrays.toString(arr));

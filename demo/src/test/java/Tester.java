@@ -22,6 +22,7 @@ public class Tester {
         long elapsedTime = endTime - startTime;
         System.out.println("Bubble Sort 1 - Time taken: " + elapsedTime + " ns");
         assertArrayEquals(arrExpected, arr);
+        
     }
 
     @Test
