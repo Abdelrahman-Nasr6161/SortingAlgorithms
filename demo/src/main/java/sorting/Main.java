@@ -24,16 +24,25 @@ public class Main {
         // for (int i = 0; i < n; i++) {
         // arr[i] = sc.nextInt();
         // }
-        // Creates an instance of Array_Sort, constructor takes relative path to demo of
-        // a file
+
+
+        // Creates an instance of Array_Sort, constructor takes relative path to "demo" folders of a file
         // that contains an array of numbers.
         Sort_Array sort_array = null;
-        try {        
-            sort_array = new Sort_Array("data/array.txt");
+        System.out.println("Enter the path of the file containing the array, ex: demo/data/array.txt");
+        String input = sc.nextLine();
+
+        try {
+            if (input.trim().isEmpty()){
+                input = "demo/data/array.txt";
+            }        
+            sort_array = new Sort_Array(input);
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            System.out.println("No such file found");
             System.exit(1);
+            
         }
+
         int[] arr = sort_array.array;
 
         System.out.println("Enter the sorting algorithm to be used");
